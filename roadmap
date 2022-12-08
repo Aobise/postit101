@@ -1,0 +1,65 @@
+#!/bin/bash
+
+
+
+
+# run 4 and 5
+
+apt install default-jre
+sleep 5
+
+apt install default-jdk
+
+sleep 5
+
+cd /opt
+
+sleep 5
+
+mkdir tomcat2
+
+sleep 5
+
+
+cd tomcat 
+
+wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.83/bin/apache-tomcat-8.5.83.tar.gz
+
+sleep 5
+
+ls
+
+tar -xvzf /opt/apache-tomcat-8.5.84.tar.gz
+
+sleep 5
+
+rm apache-tomcat-8.5.84.tar.gz
+
+sleep 5
+
+cd bin 
+
+chmod 777 startup.sh
+
+chmod 777 shutdown.sh
+
+sleep 5
+
+ln -s /opt/tomcat/apache-tomcat-8.5.84/bin/startup.sh /usr/local/bin/tomcatup
+
+sleep 5
+
+ln -s /opt/tomcat/apache-tomcat-8.5.84/bin/shutdown.sh /usr/local/bin/tomcatdown
+
+sleep 5
+
+tomcatup
+
+#access tomcat application from browser on port 8080
+
+#http://<Public_IP>:8080
+
+find /opt -name context.xml
+
+
+
